@@ -1,3 +1,6 @@
+'''
+Extracts features from the body of the mail
+'''
 import re 
 date=re.compile(r'\b((\d{1,2})(th|st|\s|rd)\s?(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sept|Oct|Nov|Dec))|((\d{1,2})(/|-)(\d{1,2})(/|-)(\d{2,4}))|((Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sept|Oct|Nov|Dec).*\d{1,2})',re.I)  #use res[0][0] as actual date
 time=re.compile(r'\s(([0-1][0-9](00|15|30|45|59))|([2][0-4](00|15|30|45|59)))|(\d{1,2}(\.|\:|\s?)(\d{2})?\s?(A(\.?)M(\.?)|P(\.?)M(\.?)))',re.I)
