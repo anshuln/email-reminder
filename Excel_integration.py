@@ -1,8 +1,15 @@
+'''
+handles the creation and management of the database
+'''
+
 import csv
 import helpers
 import os
 
 def check():
+	'''
+	Checks for any upcoming events
+	'''
 	file=open('Database.csv')
 	reader=csv.reader(file)
 	data=list(reader)
@@ -15,6 +22,9 @@ def check():
 					if(data[row][6]=='1'):
 						print("You have an upcoming event today:- ",data[row][0])
 def add():
+	'''
+	Addds new events to the database
+	'''
 	import email_integration
 	add_this=email_integration.get_data()
 	#file=open('Database.csv', 'a', newline='')
@@ -49,6 +59,9 @@ def add():
 		writer.writerow(addition)
 	file.close()
 def manage():
+	'''
+	Removes events once their date is passed, and avoids duplicates
+	'''
 	rfile=open('Database.csv')
 	reader=csv.reader(rfile)
 	data=list(reader)
