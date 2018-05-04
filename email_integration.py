@@ -1,3 +1,6 @@
+'''
+
+'''
 import parse_mail
 import helpers
 class data():
@@ -17,8 +20,8 @@ def get_data():
     
     context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
     imapObj = IMAPClient('imap.iitb.ac.in', ssl=True, ssl_context=context)
-    username='170070015'#input("Enter username")
-    password='anshar$2000'#getpass.getpass("Enter password")
+    username=input("Enter username")
+    password=getpass.getpass("Enter password")
     imapObj.login(username,password)
     imapObj.select_folder("INBOX.Python script","r")
     date=helpers.getdate()
