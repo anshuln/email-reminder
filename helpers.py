@@ -1,3 +1,6 @@
+'''
+Contains random helper functions
+'''
 def getdate():
     from datetime import date
     from datetime import timedelta
